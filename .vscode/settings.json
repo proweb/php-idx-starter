@@ -1,4 +1,6 @@
 {
-    "editor.fontSize": 22,
-    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer"
+    "workbench.colorTheme": "Code OSS Dark",
+    "workbench.sideBar.location": "right",
+    "editor.fontSize": 18,    
+    "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
 }
