@@ -7,20 +7,33 @@
   packages = [
     pkgs.php83
     pkgs.php83Packages.composer
+    pkgs.php83Extensions.pdo
+    pkgs.sqlite
   ];
   # Sets environment variables in the workspace
-  env = {};
+  env = { };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
       "devsense.composer-php-vscode"
       "devsense.intelli-php-vscode"
+      "junstyle.php-cs-fixer"
     ];
     workspace = {
-      # Runs when a workspace is (re)started
-      onStart= {
-        run-server = "php -S localhost:3000 index.php";
+      onCreate = {
+        composer-install = "composer install";
       };
     };
+    previews = {
+      enable = true;     
+      previews = {
+        web = {
+          command = ["php" "-S" "localhost:$PORT"];
+          manager = "web";
+        };
+      }; 
+    };
+
   };
 }
+
